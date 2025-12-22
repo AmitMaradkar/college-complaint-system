@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://college-complaint-system-nfdl.onrender.com",
+  baseURL: "https://college-backend.onrender.com",
   withCredentials: true
 });
 
