@@ -1,0 +1,104 @@
+body {
+  background: #f4f6f9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background: #1e6fd9;
+  border: none;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  border: none;
+}
+
+.dashboard-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+
+.dashboard-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+table th {
+  background-color: #f8f9fa;
+}
+}
+/*  RESET */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* BACKGROUND BASE*/
+.page-bg {
+  min-height: 100vh;          /* allow natural height */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;         /* prevent horizontal scroll */
+  position: relative;
+}
+
+
+/* CONTENT WRAPPER*/
+.page-content {
+  height: 100%;
+  overflow-y: auto;     /* Scroll only if content is large */
+  padding-bottom: 20px;
+}
+
+
+/*  BACKGROUND VARIANTS*/
+.bg-campus-1 {
+  background-image: url("../assets/backgrounds/campus1.jpg");
+}
+
+.bg-campus-2 {
+  background-image: url("../assets/backgrounds/campus2.jpg");
+}
+
+.bg-campus-3 {
+  background-image: url("../assets/backgrounds/campus3.jpg");
+}
+
+
+/*  CARD IMPROVEMENTS*/
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Tagline text below fountain */
+.tagline {
+  position: absolute;
+  bottom: 30px;              /* adjust this value */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: cursive;
+  font-size: 22px;
+  font-weight: 500;
+  color: #160479;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+h2{
+color: #160479;
+font-family: 'Times New Roman', Times, serif;
+}

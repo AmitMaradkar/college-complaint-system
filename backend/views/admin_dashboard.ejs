@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Section Complaints</h2>
+
+    <a href="/admin/logout">
+    <button>Logout</button>
+    </a>
+
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Roll No</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Update</th>
+        </tr>
+
+        <% complaints.forEach(c => { %>
+        <tr>
+            <td><%= c.roll_no %></td>
+            <td><%= c.title %></td>
+            <td><%= c.description %></td>
+            <td><%= c.status %></td>
+            <td>
+                <form action="/admin/update-status" method="POST">
+                    <input type="hidden" name="id" value="<%= c.id %>">
+                    <select name="status">
+                        <option>Submitted</option>
+                        <option>In Progress</option>
+                        <option>Resolved</option>
+                        <option>Rejected</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

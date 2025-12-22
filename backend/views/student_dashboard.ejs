@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h2>Submit a Complaint</h2>
+    <a href="/student/logout">
+    <button>Logout</button>
+    </a>
+
+
+    <form action="/student/complaint" method="POST">
+        <label>Section</label><br>
+        <select name="section_id" required>
+            <% sections.forEach(section => { %>
+                <option value="<%= section.id %>">
+                    <%= section.section_name %>
+                </option>
+            <% }) %>
+        </select><br><br>
+
+        <label>Title</label><br>
+        <input type="text" name="title" required><br><br>
+
+        <label>Description</label><br>
+        <textarea name="description" required></textarea><br><br>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</body>
+
+<h3>Your Complaints</h3>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+
+    <% complaints.forEach(c => { %>
+    <tr>
+        <td><%= c.title %></td>
+        <td><%= c.status %></td>
+    </tr>
+    <% }) %>
+</table>
+
+
+</html>
