@@ -1,29 +1,28 @@
-const cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const cors = require("cors");
 
 const app = express();
 
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.json());
 
-app.use(session({
-    secret: "secretkey",
-    resave: false,
-    saveUninitialized: true
-}));
-
-app.set("view engine", "ejs");
-
+// CORS (allow frontend)
 app.use(cors({
-    origin: "http://localhost:3001",
-    credentials: true
+  origin: "*",
+  credentials: true
 }));
 
-app.use(express.json()); // VERY IMPORTANT
+// Session
+app.use(session({
+  secret: "secretkey",
+  resave: false,
+  saveUninitialized: true
+}));
 
-
+// Routes
 const authRoutes = require("./routes/auth");
 const studentRoutes = require("./routes/student");
 const adminRoutes = require("./routes/admin");
@@ -32,13 +31,9 @@ app.use("/", authRoutes);
 app.use("/student", studentRoutes);
 app.use("/admin", adminRoutes);
 
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+// IMPORTANT: Use Render PORT
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-const cors = require("cors");
-
-app.use(cors({
-  origin: "*",   // allow frontend
-  credentials: true
-}));
