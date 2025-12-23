@@ -4,8 +4,9 @@ const bcrypt = require("bcrypt");
 const db = require("../db");
 
 // Home page 
+
 router.get("/", (req, res) => {
-    res.render("index");
+  res.json({ message: "Backend is running" });
 });
 
 
