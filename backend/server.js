@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const session = require("express-session");
+
 const cors = require("cors");
 
 const app = express();
@@ -15,12 +15,7 @@ app.use(cors({
   credentials: true
 }));
 
-// Session
-app.use(session({
-  secret: "secretkey",
-  resave: false,
-  saveUninitialized: true
-}));
+
 
 // Routes
 const authRoutes = require("./routes/auth");

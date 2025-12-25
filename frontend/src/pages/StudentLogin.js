@@ -26,6 +26,17 @@ export default function StudentLogin() {
         }
     };
 
+
+    api.post("/student/login", data)
+  .then(res => {
+    if (res.data.success) {
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      navigate("/student/dashboard");
+    }
+  })
+  .catch(() => alert("Invalid credentials"));
+
+
     return (
 
     <div className="page-bg bg-campus-1">

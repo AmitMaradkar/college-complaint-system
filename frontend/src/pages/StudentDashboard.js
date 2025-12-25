@@ -10,6 +10,14 @@ import {
   Alert
 } from "react-bootstrap";
 
+useEffect(() => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user || user.role !== "student") {
+    navigate("/student/login");
+  }
+}, []);
+
+
 export default function StudentDashboard() {
   const [sections, setSections] = useState([]);
   const [complaints, setComplaints] = useState([]);
